@@ -4,7 +4,7 @@
  */
 
 return array(
-    'name' => 'Bold Card/Account Management API',
+    'name' => 'Benchmark testing',
     'version' => 1,
     'sourceVersion' => '0.0.1',
     'environment' => 'dev',
@@ -17,7 +17,6 @@ return array(
         'vendor'    => realpath(__DIR__ . '/../../vendor') . '/',
     ),
     'routes' => array(
-        'Api\AccountManagement\Routes',
-        'Api\TestApi\Routes',
+        'Test\Controllers\Routes'
     ),
 );
