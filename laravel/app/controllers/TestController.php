@@ -24,7 +24,7 @@ class TestController extends BaseController {
 
     define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
 
-    return json_encode($this->times());
+    return Response::json($this->times());
   }
 
   /**
@@ -40,7 +40,7 @@ class TestController extends BaseController {
 
     define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
 
-    return json_encode($this->times());
+    return Response::json($this->times());
   }
 
   /**
@@ -60,7 +60,7 @@ class TestController extends BaseController {
 
     define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
 
-    return json_encode($this->times());
+    return Response::json($this->times());
   }
 
   function times(){
