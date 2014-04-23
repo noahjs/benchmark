@@ -74,7 +74,7 @@ class DefaultController extends Controller
   {
     $data = [];
 
-    $data[] = Post::find(1);
+    $data[] = Post::with('author')->find(1)->toArray();
 
     return $app->json($data);
   }

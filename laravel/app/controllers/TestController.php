@@ -30,7 +30,7 @@ class TestController extends BaseController {
   {
     $data = [];
 
-    $data[] = Post::find(1);
+    $data[] = Post::find(1)->toArray();
 
     return json_encode($data);
   }
