@@ -106,6 +106,7 @@ class DefaultController extends Controller
     */
     return [
       'total'     => FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_START,
+      'framework' => FRAMEWORK_CONTROLLER_START - FRAMEWORK_START,
       'vendor'    => FRAMEWORK_VENDOR_COMPLETE - FRAMEWORK_VENDOR_START,
       'controller'=> FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_CONTROLLER_START,
     ];
