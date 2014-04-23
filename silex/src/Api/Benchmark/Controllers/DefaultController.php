@@ -78,7 +78,7 @@ class DefaultController extends Controller
     $posts = Post::where('author_id', '1')->get();
 
     foreach( $posts as $post ){
-      $data[] = $post->author->name." - ".$post->name;
+      $data[] = $post->author->first_name." ".$post->author->last_name." - ".$post->title;
     }
 
     return $app->json($data);

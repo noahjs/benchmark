@@ -14,7 +14,7 @@ class TestController extends BaseController {
   /**
    * hello world
    */
-  public function hello_world()
+  public function hello()
   {
     $data = [];
 
@@ -26,7 +26,7 @@ class TestController extends BaseController {
   /**
    * simple, single ORM Query
    */
-  public function simple_select()
+  public function simple()
   {
     $data = [];
 
@@ -38,14 +38,14 @@ class TestController extends BaseController {
   /**
    * large, ORM intensive but using correct syntax
    */
-  public function loop()
+  public function large()
   {
     $data = [];
 
     $posts = Post::with('author')->where('author_id', '1')->get();
 
     foreach( $posts as $post ){
-      $data[] = $post->author->name." - ".$post->name;
+      $data[] = $post->author->first_name." ".$post->author->last_name." - ".$post->title;
     }
 
     return json_encode($data);

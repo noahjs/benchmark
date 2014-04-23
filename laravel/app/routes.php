@@ -15,9 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
-Route::get('/seed', 'HomeController@seed');
 
-Route::get('/hello', 'TestController@hello_world');
-Route::get('/simple', 'TestController@simple_select');
-Route::get('/large', 'TestController@loop');
+Route::get('/hello', 'TestController@hello');
+Route::get('/simple', 'TestController@simple');
+Route::get('/large', 'TestController@large');
 
