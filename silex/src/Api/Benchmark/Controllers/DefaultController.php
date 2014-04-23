@@ -8,6 +8,8 @@ namespace Api\Benchmark\Controllers;
 use Api\Application;
 use Api\Controller;
 
+use Author;
+use Post;
 
 
 class DefaultController extends Controller

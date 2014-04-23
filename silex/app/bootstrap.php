@@ -19,6 +19,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/database.php';
 
 
+// Load Models
+require_once __DIR__.'/models.php';
 
 
 // simple config handling based on ENV setting
@@ -56,8 +58,6 @@ require __DIR__ . '/config/routes.php';
 require __DIR__ . '/config/middleware/before.php';
 require __DIR__ . '/config/middleware/after.php';
 require __DIR__ . '/config/middleware/finish.php';
-
-
 
 
 
