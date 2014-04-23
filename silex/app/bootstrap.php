@@ -31,7 +31,7 @@ if ($envMode = getenv('AIS_MODE')) {
         $config = ((array) include $configOverride) + $config;
     }
 } else {
-    $envMode = 'prod';
+    $envMode = 'dev';
 }
 
 // init and set app settings
