@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/hello', 'TestController@hello_world');
+Route::get('/simple', 'TestController@simple_select');
+Route::get('/large', 'TestController@loop');
+

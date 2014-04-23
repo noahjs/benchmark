@@ -17,7 +17,7 @@ sudo yum install -y htop
 
 # Server programs
 # Mod Security
-sudo yum install -y httpd mod_ssl mod_security mysql-server
+sudo yum install -y httpd mysql-server
 
 # Add webtatic (PHP)
 sudo rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
@@ -29,14 +29,11 @@ sudo yum install -y php55w php55w-common php55w-devel php55w-cli php55w-gd php55
 
 # Add Apache VHosts
 sudo bash -c 'echo "Include /var/www/html/development.conf" >> /etc/httpd/conf/httpd.conf'
-sudo sed -i 's/ServerSignature On.*/ServerSignature Off/' /etc/httpd/conf/httpd.conf
-sudo sed -i 's/ServerTokens OS.*/ServerTokens Off/' /etc/httpd/conf/httpd.conf
 
 # PHP Configs
 sudo bash -c 'echo "date.timezone = America/Phoenix" >> /etc/php.ini'
 sudo sed -i 's/display_errors = Off.*/display_errors = On/' /etc/php.ini
 sudo sed -i 's/E_ALL & ~E_DEPRECATED & ~E_STRICT.*/E_ALL/' /etc/php.ini
-sudo sed -i 's/expose_php = on.*/expose_php = off/' /etc/php.ini
 
 # Install composer
 sudo curl -sS https://getcomposer.org/installer | php

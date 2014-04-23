@@ -17,11 +17,11 @@ class DefaultController extends Controller
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function hello(Application $app)
+  public function hello_world(Application $app)
   {
     $data = [];
 
-    $data[] = 'Hello';
+    $data[] = 'Hello World';
 
     return $app->json($data);
   }
@@ -32,7 +32,7 @@ class DefaultController extends Controller
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function simple(Application $app)
+  public function simple_select(Application $app)
   {
     $data = [];
 
@@ -42,30 +42,12 @@ class DefaultController extends Controller
   }
 
   /**
-   * large, ORM intensive
-   *
-   * @param Application $app
-   * @return \Symfony\Component\HttpFoundation\JsonResponse
-   */
-  public function large(Application $app)
-  {
-    $data = [];
-
-    $posts = Post::where('author_id', '1');
-
-    foreach( $posts as $post ){
-      $data[] = $post->author->name." - ".$post->name;
-    }
-    return $app->json($data);
-  }
-
-  /**
    * large, ORM intensive but using correct syntax
    *
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function correct(Application $app)
+  public function loop(Application $app)
   {
     $data = [];
 
