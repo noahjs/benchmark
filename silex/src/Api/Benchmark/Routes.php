@@ -16,7 +16,7 @@ class Routes extends \Api\Routes
         /*
             Root
         */
-        $this->getApp()->get('/', 'Api\Benchmark\Controllers\DefaultController::index');\
+        $this->getApp()->get('/', 'Api\Benchmark\Controllers\DefaultController::index');
 
         $this->getApp()->get('/hello', 'Api\Benchmark\Controllers\DefaultController::hello');
         $this->getApp()->get('/simple', 'Api\Benchmark\Controllers\DefaultController::simple');
