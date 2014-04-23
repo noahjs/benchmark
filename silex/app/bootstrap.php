@@ -11,11 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 $startTime = microtime(true);
 
 
-
-// Conf
-require_once __DIR__.'/../../conf/conf.php';
-
-
 // LOAD COMPOSER LIBS
 require_once __DIR__.'/../vendor/autoload.php';
 
