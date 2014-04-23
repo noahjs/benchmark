@@ -8,24 +8,6 @@ namespace Api\Benchmark\Controllers;
 use Api\Application;
 use Api\Controller;
 
-/*
- * Mickey Mouse inclusion of Models
- */
-
-class Author extends \Illuminate\Database\Eloquent\Model {
-  protected $table = 'authors';
-  public function posts()
-  {
-    return $this->hasMany('Post');
-  }
-}
-class Post extends \Illuminate\Database\Eloquent\Model {
-  protected $table = 'posts';
-  public function author()
-  {
-    return $this->belongsTo('Author');
-  }
-}
 
 
 class DefaultController extends Controller
