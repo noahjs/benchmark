@@ -7,8 +7,9 @@ Currently this will simulate api reponses.
 Setup
 ===
 ##Hosts
--http://laravel.phpbenchmark.net
--http://silex.benchmark
+http://laravel.phpbenchmark.net
+
+http://silex.benchmark
 
 ##Database:
 -MySQL
