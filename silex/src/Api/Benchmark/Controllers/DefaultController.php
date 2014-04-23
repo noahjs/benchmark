@@ -72,11 +72,13 @@ class DefaultController extends Controller
    */
   public function simple(Application $app)
   {
-    $data = [];
 
-    $data[] = Post::with('author')->find(1)->toArray();
+    $post = Post::find(1);
 
-    return $app->json($data);
+    // ORM Query
+    $post->author;
+
+    return $app->json($post->toArray());
   }
 
   /**
@@ -89,7 +91,7 @@ class DefaultController extends Controller
   {
     $data = [];
 
-    $posts = Post::with('author')->where('author_id', '1');
+    $posts = Post::where('author_id', '1')->get();
 
     foreach( $posts as $post ){
       $data[] = $post->author->name." - ".$post->name;
