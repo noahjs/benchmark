@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder {
 
     $faker = Faker\Factory::create();
 
-    /*
-    for( $i=0; $i< 5000; $i++ ){
+
+    for( $i=0; $i< 50; $i++ ){
 
 
       $author = new Author();
@@ -34,9 +34,9 @@ class DatabaseSeeder extends Seeder {
 
       $author->save();
     }
-    */
 
-    for( $i=0; $i< 100000; $i++ ){
+
+    for( $i=0; $i< 100; $i++ ){
 
 
       $post = new Post();
