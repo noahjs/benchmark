@@ -4,30 +4,40 @@ benchmark
 Project that will be used to test PHP benchmarks of multiple frameworks.
 Currently this will simulate api reponses.
 
+Setup
+===
+##Hosts
+http://laravel.phpbenchmark.net
+http://silex.benchmark
+
+##Database:
+-MySQL
+-5,000 Authors
+-100,000 Posts
+
 #Tests
-/helloworld
-  -No Database
+
+/hello
   Respond Hello World
 
 /simple_select
-  - Database has 1 item
-  Do simple select from DB
+  Query Post by Id
+  get Author from post
+  respond
 
-/loop
-  - Database has 100,000 items
-  Select 1,000 items, and run ORM reference in a loop
-
+/large
+  Select 23 items (no limit) from Posts
+  Run NOT OPTIMIZED ORM reference on each
+  respond
 
 ##Install
 Run bootstrap.sh, or write me a puppet config of it ;-)
 
-##Hosts
-laravel.benchmark
-silex.benchmark
-
+https://github.com/noahjs/benchmark
 
 #Testing Process
 Time tracking:
+
     /*
     FRAMEWORK_START
 
