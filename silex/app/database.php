@@ -44,14 +44,14 @@ $capsule->bootEloquent();
  * Mickey Mouse inclusion of Models
  */
 
-class Author extends Eloquent {
+class Author extends \Illuminate\Database\Eloquent\Model {
   protected $table = 'authors';
   public function posts()
   {
     return $this->hasMany('Post');
   }
 }
-class Post extends Eloquent {
+class Post extends \Illuminate\Database\Eloquent\Model {
   protected $table = 'posts';
   public function author()
   {
