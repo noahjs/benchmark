@@ -55,7 +55,7 @@ class DefaultController extends Controller
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function hello_world(Application $app)
+  public function hello(Application $app)
   {
     $data = [];
 
@@ -70,7 +70,7 @@ class DefaultController extends Controller
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function simple_select(Application $app)
+  public function simple(Application $app)
   {
     $data = [];
 
@@ -85,7 +85,7 @@ class DefaultController extends Controller
    * @param Application $app
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    */
-  public function loop(Application $app)
+  public function large(Application $app)
   {
     $data = [];
 
