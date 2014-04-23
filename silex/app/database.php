@@ -15,7 +15,7 @@ use Illuminate\Container\Container;
 $capsule = new Capsule;
 
 // Add each database connection from the config.
-$capsule->addConnection('default', [
+$capsule->addConnection([
   'driver'   => 'mysql',
   'host'     => 'localhost',
   'database' => 'benchmark',
@@ -37,3 +37,24 @@ $capsule->setAsGlobal();
 
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
+
+
+
+/*
+ * Mickey Mouse inclusion of Models
+ */
+
+class Author extends Eloquent {
+  protected $table = 'authors';
+  public function posts()
+  {
+    return $this->hasMany('Post');
+  }
+}
+class Post extends Eloquent {
+  protected $table = 'posts';
+  public function author()
+  {
+    return $this->beongsTo('Author');
+  }
+}
