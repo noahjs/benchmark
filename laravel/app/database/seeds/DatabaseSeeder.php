@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
     $faker = Faker\Factory::create();
-    $authors = [];
 
+    /*
     for( $i=0; $i< 5000; $i++ ){
 
 
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder {
 
       $author->save();
     }
+    */
 
     for( $i=0; $i< 100000; $i++ ){
 
@@ -41,13 +42,13 @@ class DatabaseSeeder extends Seeder {
       $post = new Post();
       $post->author_id	=	mt_rand(1,5000);
 
-      $post->title    = $faker->realText(mt_rand(75,250));
-      $post->content  = $faker->realText(mt_rand(400,5000));
+      $post->title    = $faker->text(mt_rand(75,250));
+      $post->content  = $faker->text(mt_rand(400,5000));
 
       $post->save();
 
     }
-    
+
 	}
 
 }
