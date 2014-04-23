@@ -23,7 +23,7 @@ class Post extends \Illuminate\Database\Eloquent\Model {
   protected $table = 'posts';
   public function author()
   {
-    return $this->beongsTo('Author');
+    return $this->belongsTo('Author');
   }
 }
 

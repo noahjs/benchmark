@@ -7,7 +7,7 @@ class Post extends Eloquent {
 
   public function author()
   {
-    return $this->beongsTo('Author');
+    return $this->belongsTo('Author');
   }
 
 }
