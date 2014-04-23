@@ -1,6 +1,6 @@
 <?php
 
-namespace Api;
+namespace Benchmark;
 
 class Application extends \Silex\Application
 {}

@@ -3,10 +3,10 @@
  * Default controller for base endpoints.
  */
 
-namespace Api\AccountManagement\Controllers;
+namespace Benchmark\Test\Controllers;
 
-use Api\Application;
-use Api\Controller;
+use Benchmark\Application;
+use Benchmark\Controller;
 
 class DefaultController extends Controller
 {
