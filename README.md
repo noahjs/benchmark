@@ -1,42 +1,44 @@
-benchmark
+PHP Framework Benchmarking
 =========
 
 Project that will be used to test PHP benchmarks of multiple frameworks.
 Currently this will simulate api reponses.
 
-Setup
-===
 ##Hosts
 http://laravel.phpbenchmark.net
 
-http://silex.benchmark
+http://silex.phpbenchmark.net
 
 ##Database:
--MySQL
+*MySQL
 
--5,000 Authors
+*5,000 Authors
 
--100,000 Posts
+*100,000 Posts
 
-#Tests
+##Test routes
+----
 
-/hello
-  Respond Hello World
+###/hello
+>  Respond Hello World
 
-/simple_select
-  Query Post by Id
-  get Author from post
-  respond
+###/simple_select
+>  Query Post by Id
 
-/large
-  Select 23 items (no limit) from Posts
-  Run NOT OPTIMIZED ORM reference on each
-  respond
+>  get Author from post
+
+>  respond
+
+###/large
+>  Select 23 items (no limit) from Posts
+
+>  Run NOT OPTIMIZED ORM reference on each
+
+>  respond
 
 ##Install
 Run bootstrap.sh, or write me a puppet config of it ;-)
 
-https://github.com/noahjs/benchmark
 
 #Testing Process
 Time tracking:
