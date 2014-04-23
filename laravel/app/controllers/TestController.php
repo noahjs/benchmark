@@ -16,11 +16,15 @@ class TestController extends BaseController {
    */
   public function hello()
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
+
     $data = [];
 
     $data[] = 'Hello World';
 
-    return json_encode($data);
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return json_encode($this->times());
   }
 
   /**
@@ -28,11 +32,15 @@ class TestController extends BaseController {
    */
   public function simple()
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
+
     $data = [];
 
     $data[] = Post::find(1)->toArray();
 
-    return json_encode($data);
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return json_encode($this->times());
   }
 
   /**
@@ -40,6 +48,8 @@ class TestController extends BaseController {
    */
   public function large()
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
+
     $data = [];
 
     $posts = Post::with('author')->where('author_id', '1')->get();
@@ -48,7 +58,26 @@ class TestController extends BaseController {
       $data[] = $post->author->first_name." ".$post->author->last_name." - ".$post->title;
     }
 
-    return json_encode($data);
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return json_encode($this->times());
+  }
+
+  function times(){
+    /*
+    FRAMEWORK_START
+
+    FRAMEWORK_VENDOR_START
+    FRAMEWORK_VENDOR_COMPLETE
+
+    FRAMEWORK_CONTROLLER_START
+    FRAMEWORK_CONTROLLER_COMPLETE
+    */
+    return [
+      'total'     => FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_START,
+      'vendor'    => FRAMEWORK_VENDOR_COMPLETE - FRAMEWORK_VENDOR_START,
+      'controller'=> FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_CONTROLLER_START,
+    ];
   }
 
 }

@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
 $startTime = microtime(true);
 
 
+define('FRAMEWORK_VENDOR_START', microtime(true));
+
 // LOAD COMPOSER LIBS
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -61,5 +63,6 @@ require __DIR__ . '/config/middleware/finish.php';
 
 
 
+define('FRAMEWORK_VENDOR_COMPLETE', microtime(true));
 
 return $app;

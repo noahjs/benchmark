@@ -41,11 +41,14 @@ class DefaultController extends Controller
    */
   public function hello(Application $app)
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
     $data = [];
 
     $data[] = 'Hello World';
 
-    return $app->json($data);
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return $app->json($this->times());
   }
 
   /**
@@ -56,13 +59,16 @@ class DefaultController extends Controller
    */
   public function simple(Application $app)
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
 
     $post = Post::find(1);
 
     // ORM Query
     $post->author;
 
-    return $app->json($post->toArray());
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return $app->json($this->times());
   }
 
   /**
@@ -73,6 +79,8 @@ class DefaultController extends Controller
    */
   public function large(Application $app)
   {
+    define('FRAMEWORK_CONTROLLER_START', microtime(true));
+
     $data = [];
 
     $posts = Post::where('author_id', '1')->get();
@@ -81,7 +89,26 @@ class DefaultController extends Controller
       $data[] = $post->author->first_name." ".$post->author->last_name." - ".$post->title;
     }
 
-    return $app->json($data);
+    define('FRAMEWORK_CONTROLLER_COMPLETE', microtime(true));
+
+    return $app->json($this->times());
+  }
+
+  function times(){
+    /*
+    FRAMEWORK_START
+
+    FRAMEWORK_VENDOR_START
+    FRAMEWORK_VENDOR_COMPLETE
+
+    FRAMEWORK_CONTROLLER_START
+    FRAMEWORK_CONTROLLER_COMPLETE
+    */
+    return [
+      'total'     => FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_START,
+      'vendor'    => FRAMEWORK_VENDOR_COMPLETE - FRAMEWORK_VENDOR_START,
+      'controller'=> FRAMEWORK_CONTROLLER_COMPLETE - FRAMEWORK_CONTROLLER_START,
+    ];
   }
 
 

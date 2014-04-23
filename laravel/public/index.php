@@ -6,6 +6,8 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
+define('FRAMEWORK_START', microtime(true));
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -18,8 +20,11 @@
 |
 */
 
+define('FRAMEWORK_VENDOR_START', microtime(true));
+
 require __DIR__.'/../bootstrap/autoload.php';
 
+define('FRAMEWORK_VENDOR_COMPLETE', microtime(true));
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
