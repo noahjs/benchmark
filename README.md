@@ -13,7 +13,9 @@ http://silex.benchmark
 
 ##Database:
 -MySQL
+
 -5,000 Authors
+
 -100,000 Posts
 
 #Tests
